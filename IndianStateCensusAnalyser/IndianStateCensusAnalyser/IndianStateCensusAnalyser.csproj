@@ -81,6 +81,8 @@
     <None Include="App.config" />
     <None Include="File\StateCode.csv" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="File\StateCensusData.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
