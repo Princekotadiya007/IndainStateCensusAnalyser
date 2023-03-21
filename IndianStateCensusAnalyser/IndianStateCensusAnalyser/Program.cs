@@ -12,7 +12,7 @@ namespace IndianStateCensusAnalyser
         static void Main(string[] args)
         {
             CsvStateCensus csvState = new CsvStateCensus();
-            csvState.ReadStatecensusData(filePath);
+            csvState.ReadStateCensusData(filePath);
         }
     }
 }

@@ -11,17 +11,19 @@ namespace IndianStateCensusAnalyser
 {
     public class CsvStateCensus
     {
-        public void ReadStatecensusData(string filePath)
+        public int ReadStateCensusData(string filePath)
         {
-            using(var render = new StreamReader(filePath))
+            using (var render = new StreamReader(filePath))
             {
                 using (var csv = new CsvReader(render, CultureInfo.InvariantCulture))
                 {
                     var records = csv.GetRecords<StateCensusAnalyserModel>().ToList();
                     foreach (var record in records)
                     {
-                        Console.WriteLine($"{record.State} {record.Population} {record.AreaInSqKm} {record.DensityPerSqKm}");
+                        //Console.WriteLine($"{record.State} {record.Population} {record.AreaInSqKm} {record.DensityPerSqKm}");
+                        Console.WriteLine(record);
                     }
+                    return records.Count()-1;
                 }
             }
         }
