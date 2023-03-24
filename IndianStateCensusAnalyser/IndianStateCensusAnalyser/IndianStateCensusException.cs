@@ -11,7 +11,8 @@ namespace IndianStateCensusAnalyser
         public enum IndianStateExceptionType
         {
             FILE_INCORRECT,
-            FILE_TYPE_INCORRECT
+            FILE_TYPE_INCORRECT,
+            INCORRECT_DELIMETER
         }
         public IndianStateExceptionType Type;
         public IndianStateCensusException(IndianStateExceptionType type, string message) : base(message)
