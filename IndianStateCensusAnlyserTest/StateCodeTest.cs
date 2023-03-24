@@ -1,6 +1,7 @@
 ﻿using IndianStateCensusAnalyser;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -56,6 +57,19 @@ namespace IndianStateCensusAnlyserTest
             catch (IndianStateCensusException ex)
             {
                 Assert.AreEqual(ex.Message, "Incorrect state code delimeter");
+            }
+        }
+        [Test]
+        public void GivenIncorrectStateCodeHeader_ShouldReturnCustomException()
+        {
+            try
+            {
+                bool record = stateAnalyserCode.ReadStateCodeData(stateCodePath, "SrNo,Name,TIN,StateCode,");
+                Assert.IsTrue(record);
+            }
+            catch (IndianStateCensusException ex)
+            {
+                Assert.AreEqual(ex.Message, "State code header is incorrect");
             }
         }
     }
