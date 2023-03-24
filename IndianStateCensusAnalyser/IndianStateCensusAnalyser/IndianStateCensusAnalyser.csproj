@@ -68,9 +68,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CsvStateCode.cs" />
     <Compile Include="IndianStateCensusException.cs" />
     <Compile Include="StateCensusAnalyserModel.cs" />
     <Compile Include="StateCensusAnalyzer.cs" />
+    <Compile Include="StateCodeModel.cs" />
     <None Include="File\StateCensusData.csv" />
     <Compile Include="CsvStateCensus.cs" />
     <Compile Include="Program.cs" />
