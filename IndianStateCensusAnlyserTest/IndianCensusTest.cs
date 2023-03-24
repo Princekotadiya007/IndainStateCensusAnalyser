@@ -1,4 +1,5 @@
 using IndianStateCensusAnalyser;
+using System.IO;
 
 namespace IndianStateCensusAnlyserTest
 {
@@ -51,6 +52,19 @@ namespace IndianStateCensusAnlyserTest
             catch (IndianStateCensusException ex)
             {
                 Assert.AreEqual(ex.Message, "Delimeter is incorrect");
+            }
+        }
+        [Test]
+        public void GivenIncorrectHeader_ShouldReturnCustomException()
+        {
+            try
+            {
+                bool record = stateCensusAnalyzer.ReadStateCensusData(filePath, "State,Population,AreaInSqKm,DensityPerSqKm\r\n");
+                Assert.IsTrue(record);
+            }
+            catch (IndianStateCensusException ex)
+            {
+                Assert.AreEqual(ex.Message, "Header is incorrect");
             }
         }
     }
