@@ -79,6 +79,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="File\StateCensusDelimeter.csv" />
+    <None Include="File\StateCodeDelimeter.csv" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
